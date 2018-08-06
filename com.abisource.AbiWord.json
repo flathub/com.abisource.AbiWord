@@ -55,8 +55,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/core/3.20/3.20.2/sources/libgsf-1.14.36.tar.xz",
-                    "sha256" : "71b7507f86c0f7c341bb362bdc7925a2ae286729be0bf5b8fd9581ffbbd62940"
+                    "url" : "https://download.gnome.org/core/3.28/3.28.2/sources/libgsf-1.14.43.tar.xz",
+                    "sha256" : "12944e3d6d9a6e4071e89dbf58348e1e93544f5f9266dd1a107a28d8001cee16"
                 }
             ]
         },

@@ -52,6 +52,14 @@
         "fribidi-0.19.7.json",
         {
             "name" : "gsf",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "/share/gtk-doc/html/gsf",
+                "/share/thumbnailers",
+                "/bin/gsf*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -62,6 +70,13 @@
         },
         {
             "name" : "libwmf",
+            "cleanup" : [
+                "/include",
+                "/lib/gtk-2.0",
+                "/share/doc/libwmf",
+                "/bin/libwmf*",
+                "/bin/wmf*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -78,6 +93,13 @@
         },
         {
             "name" : "wv",
+            "cleanup" : [
+                "/include",
+                "/share/man",
+                "/share/wv",
+                "/lib/pkgconfig",
+                "/bin/wv*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -100,6 +122,10 @@
         },
         {
             "name" : "link-grammar",
+            "cleanup" : [
+                "/lib/pkgconfig",
+                "/bin/link-parser"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -110,6 +136,15 @@
         },
         {
             "name" : "lasem",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/doc",
+                "/share/gir-1.0",
+                "/share/gtk-doc",
+                "/share/man",
+                "/bin/lasem*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -120,6 +155,11 @@
         },
         {
             "name" : "goffice",
+            "cleanup" : [
+                "/include",
+                "/share/gtk-doc",
+                "/lib/pkgconfig"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -130,6 +170,11 @@
         },
         {
             "name" : "libwpd",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/bin/wpd*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -140,6 +185,11 @@
         },
         {
             "name" : "libwpg",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/bin/wpg*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -150,6 +200,12 @@
         },
         {
             "name" : "psiconv",
+            "cleanup" : [
+                "/include",
+                "/share/man",
+                "/share/psiconv",
+                "/bin/psiconv*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -166,6 +222,12 @@
         },
         {
             "name" : "gtkmathview",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/share/man",
+                "/bin/mathml*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",
@@ -214,6 +276,11 @@
         },
         {
             "name" : "libwps",
+            "cleanup" : [
+                "/include",
+                "/lib/pkgconfig",
+                "/bin/wps*"
+            ],
             "sources" : [
                 {
                     "type" : "archive",

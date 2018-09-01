@@ -299,7 +299,7 @@
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 "branch": "ABI-3-0-0-STABLE",
-                "commit": "55055e29fdec83ee82e3456bb13eba8ccc659a35"
+                "commit": "a71100deb93e3b471199003e8acd5067fc4ff091"
               },
               {
                 "type" : "shell",

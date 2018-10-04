@@ -7,6 +7,8 @@
     "command" : "abiword",
     "rename-desktop-file": "abiword.desktop",
     "rename-appdata-file": "abiword.appdata.xml",
+    "rename-icon": "abiword",
+    "copy-icon": true,
     "tags" : [
        "stable"
     ],

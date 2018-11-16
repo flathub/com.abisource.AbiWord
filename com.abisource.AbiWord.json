@@ -1,8 +1,8 @@
 {
     "app-id" : "com.abisource.AbiWord",
     "branch" : "stable",
-    "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "3.28",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "3.30",
     "sdk" : "org.gnome.Sdk",
     "command" : "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -51,7 +51,6 @@
                 }
             ]
         },
-        "fribidi-0.19.7.json",
         {
             "name" : "gsf",
             "cleanup" : [
@@ -282,6 +281,9 @@
                 "/include",
                 "/lib/pkgconfig",
                 "/bin/wps*"
+            ],
+            "config-opts" : [
+                "--disable-werror"
             ],
             "sources" : [
                 {

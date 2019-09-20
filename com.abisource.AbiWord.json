@@ -2,7 +2,7 @@
     "app-id" : "com.abisource.AbiWord",
     "branch" : "stable",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.32",
+    "runtime-version" : "3.34",
     "sdk" : "org.gnome.Sdk",
     "command" : "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -51,6 +51,7 @@
                 }
             ]
         },
+        "intltool-0.51.json",
         {
             "name" : "gsf",
             "cleanup" : [
@@ -64,8 +65,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/core/3.28/3.28.2/sources/libgsf-1.14.43.tar.xz",
-                    "sha256" : "12944e3d6d9a6e4071e89dbf58348e1e93544f5f9266dd1a107a28d8001cee16"
+                    "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.45.tar.xz",
+                    "sha256" : "5cbc2c0f1dc44d202fa0c6e3a51e9f17b0c2deb8711ba650432bfde3180b69fa"
                 }
             ]
         },
@@ -81,7 +82,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://newcontinuum.dl.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
+                    "url" : "https://downloads.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
                     "sha256" : "5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8"
                 },
                 {
@@ -164,8 +165,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.32.tar.xz",
-                    "sha256" : "02b37da9f54fb92725b973875d1d2da49b54f6486eb03648fd1ea58e4a297ac3"
+                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.44.tar.xz",
+                    "sha256" : "6d6042af92cd962604068dbced5925948af6c812c2138defc3153c204d65a7b9"
                 }
             ]
         },
@@ -179,7 +180,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "http://pilotfiber.dl.sourceforge.net/project/libwpd/libwpd/libwpd-0.9.9/libwpd-0.9.9.tar.xz",
+                    "url" : "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.9.9/libwpd-0.9.9.tar.xz",
                     "sha256" : "b91df4ca0ef0f456be9531c9ee07cf6a5e50a16b52002abb99e8ebef13fac2b2"
                 }
             ]
@@ -194,7 +195,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://excellmedia.dl.sourceforge.net/project/libwpg/libwpg/libwpg-0.2.2/libwpg-0.2.2.tar.xz",
+                    "url" : "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.2.2/libwpg-0.2.2.tar.xz",
                     "sha256" : "b49bfd77b9447534dee0d43bbdc48b4dcb09339605be21c01726243d5069a6cd"
                 }
             ]
@@ -288,7 +289,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://newcontinuum.dl.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
+                    "url" : "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
                     "sha256" : "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
                 }
             ]

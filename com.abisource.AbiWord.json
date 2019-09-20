@@ -2,7 +2,7 @@
     "app-id" : "com.abisource.AbiWord",
     "branch" : "stable",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.30",
+    "runtime-version" : "3.34",
     "sdk" : "org.gnome.Sdk",
     "command" : "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -10,8 +10,9 @@
     "rename-icon": "abiword",
     "copy-icon": true,
     "tags" : [
-       "stable"
+       "beta"
     ],
+    "desktop-file-name-suffix": " (Beta)",
     "finish-args" : [
         "--share=ipc",
         "--socket=x11",
@@ -51,6 +52,7 @@
                 }
             ]
         },
+        "intltool-0.51.json",
         {
             "name" : "gsf",
             "cleanup" : [
@@ -64,8 +66,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/core/3.28/3.28.2/sources/libgsf-1.14.43.tar.xz",
-                    "sha256" : "12944e3d6d9a6e4071e89dbf58348e1e93544f5f9266dd1a107a28d8001cee16"
+                    "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.45.tar.xz",
+                    "sha256" : "5cbc2c0f1dc44d202fa0c6e3a51e9f17b0c2deb8711ba650432bfde3180b69fa"
                 }
             ]
         },
@@ -164,8 +166,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.32.tar.xz",
-                    "sha256" : "02b37da9f54fb92725b973875d1d2da49b54f6486eb03648fd1ea58e4a297ac3"
+                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.44.tar.xz",
+                    "sha256" : "6d6042af92cd962604068dbced5925948af6c812c2138defc3153c204d65a7b9"
                 }
             ]
         },
@@ -302,8 +304,8 @@
               {
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
-                "branch": "ABI-3-0-0-STABLE",
-                "commit": "083af55059362ab93b51ed4b83cc4d877fae07c2"
+                "branch": "master",
+                "commit": "75dd142ff74e560e8f0af02523c638b4fc1131d8"
               },
               {
                 "type" : "shell",

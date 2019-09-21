@@ -304,7 +304,7 @@
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 "branch": "ABI-3-0-0-STABLE",
-                "commit": "083af55059362ab93b51ed4b83cc4d877fae07c2"
+                "commit": "4a2a41f28bde8d7c4cf3c943fc6be52cb6a66664"
               },
               {
                 "type" : "shell",

@@ -277,8 +277,8 @@
             ]
         },
         {
-            "name" : "libwps",
-            "cleanup" : [
+            "name": "libwps",
+            "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
                 "/bin/wps*"
@@ -286,20 +286,20 @@
             "config-opts" : [
                 "--disable-werror"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
-                    "sha256" : "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
+                    "sha256": "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
                 }
             ]
         },
         {
-            "name" : "abiword",
-            "config-opts" : [
+            "name": "abiword",
+            "config-opts": [
                 "--enable-plugins=auto"
             ],
-            "sources" : [
+            "sources": [
               {
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",

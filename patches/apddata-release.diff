@@ -1,0 +1,13 @@
+diff --git a/abiword.appdata.xml b/abiword.appdata.xml
+index f13cccee7..3a73f334e 100644
+--- a/abiword.appdata.xml
++++ b/abiword.appdata.xml
+@@ -24,7 +24,7 @@
+     <screenshot type="source">https://www.abisource.com/screenshots/AbiWord-screenshot-302.png</screenshot>
+   </screenshots>
+   <releases>
+-    <release version="3.0.3" type="stable">
++    <release version="3.0.3" type="stable" date="2019-11-24">
+       <description>
+         <p>This bug fixe release addresses the following:</p>
+         <ul>

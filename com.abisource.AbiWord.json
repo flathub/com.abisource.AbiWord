@@ -322,15 +322,18 @@
             ],
             "sources": [
               {
-                "type" : "git",
-                "url" : "https://gitlab.gnome.org/World/AbiWord.git",
-                "branch": "ABI-3-0-0-STABLE",
-                "commit": "350ea3c3e500640c7caff7f5af0783b91ba9c8b2"
+                "type" : "archive",
+                "url" : "https://www.abisource.com/downloads/abiword/3.0.3/source/abiword-3.0.3.tar.gz",
+                "sha256": "b3af1b653b78dbc39b310374c05a87d1b334d62bc6b0e99380b0ffa46116520f"
+              },
+              {
+                "type": "patch",
+                "path": "patches/apddata-release.diff"
               },
               {
                 "type" : "shell",
                 "commands" : [
-                  "NOCONFIGURE=1 ./autogen.sh"
+                  "autoreconf -si"
                 ]
               }
             ]

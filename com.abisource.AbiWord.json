@@ -323,18 +323,8 @@
             "sources": [
               {
                 "type" : "archive",
-                "url" : "https://www.abisource.com/downloads/abiword/3.0.3/source/abiword-3.0.3.tar.gz",
-                "sha256": "b3af1b653b78dbc39b310374c05a87d1b334d62bc6b0e99380b0ffa46116520f"
-              },
-              {
-                "type": "patch",
-                "path": "patches/apddata-release.diff"
-              },
-              {
-                "type" : "shell",
-                "commands" : [
-                  "autoreconf -si"
-                ]
+                "url" : "https://www.abisource.com/downloads/abiword/3.0.4/source/abiword-3.0.4.tar.gz",
+                "sha256": "e93096cb192e5bc19d62e180fc5eda643206465315a710113ae5036bc2a1a5d7"
               }
             ]
         }

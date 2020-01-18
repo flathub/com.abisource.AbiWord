@@ -29,6 +29,7 @@
         "*.a"
     ],
     "modules" : [
+        "shared-modules/intltool/intltool-0.51.json",
         {
             "name" : "boost",
             "buildsystem" : "simple",
@@ -49,7 +50,6 @@
                 }
             ]
         },
-        "intltool-0.51.json",
         {
             "name" : "gsf",
             "cleanup" : [

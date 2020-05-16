@@ -41,7 +41,7 @@
                 "/lib/libboost_*.a"
             ],
             "build-commands": [
-              "./bootstrap.sh",
+              "./bootstrap.sh --with-libraries=atomic",
               "./b2 install variant=release link=shared runtime-link=shared --prefix=/app --without-math --without-thread --without-container --without-log --without-system --without-filesystem --without-chrono --without-random --without-python -j $FLATPAK_BUILDER_N_JOBS"
             ],
             "sources" : [
@@ -296,10 +296,17 @@
         },
         {
             "name": "enchant",
+            "config-opts": [
+                "--with-hunspell",
+                "--with-myspell-dir=/usr/share/hunspell"
+            ],
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
                 "/bin/enchant"
+            ],
+            "post-install": [
+                "install -p -D -m 0644 COPYING.LIB -t ${FLATPAK_DEST}/share/licenses/enchant/"
             ],
             "sources": [
                 {
@@ -321,11 +328,15 @@
                 "--enable-plugins=auto"
             ],
             "sources": [
-              {
-                "type" : "archive",
-                "url" : "https://www.abisource.com/downloads/abiword/3.0.4/source/abiword-3.0.4.tar.gz",
-                "sha256": "e93096cb192e5bc19d62e180fc5eda643206465315a710113ae5036bc2a1a5d7"
-              }
+                {
+                    "type": "archive",
+                    "url": "https://www.abisource.com/downloads/abiword/3.0.4/source/abiword-3.0.4.tar.gz",
+                    "sha256": "e93096cb192e5bc19d62e180fc5eda643206465315a710113ae5036bc2a1a5d7"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/abiword-msword-overrun.patch"
+                }
             ]
         }
     ]

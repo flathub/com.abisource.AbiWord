@@ -1,6 +1,5 @@
 {
     "app-id" : "com.abisource.AbiWord",
-    "branch" : "stable",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
@@ -14,12 +13,13 @@
     ],
     "finish-args" : [
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--filesystem=home",
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
-        "--talk-name=ca.desrt.dconf"
+        "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd"
     ],
     "build-options" : {
         "env" : {

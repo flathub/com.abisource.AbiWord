@@ -8,12 +8,12 @@
     "tags" : [
        "beta"
     ],
-    "desktop-file-name-suffix": " (Beta)",
+    "desktop-file-name-prefix": "(Beta) ",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--filesystem=home",
+        "--filesystem=xdg-documents",
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
         "--filesystem=xdg-run/gvfs",

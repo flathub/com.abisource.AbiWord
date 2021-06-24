@@ -1,23 +1,23 @@
 {
     "app-id" : "com.abisource.AbiWord",
-    "branch" : "stable",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.36",
+    "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
     "command" : "abiword",
     "copy-icon": true,
     "tags" : [
        "beta"
     ],
-    "desktop-file-name-suffix": " (Beta)",
+    "desktop-file-name-prefix": "(Beta) ",
     "finish-args" : [
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
-        "--filesystem=home",
+        "--filesystem=xdg-documents",
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
-        "--talk-name=ca.desrt.dconf"
+        "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd"
     ],
     "build-options" : {
         "env" : {
@@ -39,7 +39,7 @@
                 "/lib/libboost_*.a"
             ],
             "build-commands": [
-              "./bootstrap.sh",
+              "./bootstrap.sh --with-libraries=atomic",
               "./b2 install variant=release link=shared runtime-link=shared --prefix=/app --without-math --without-thread --without-container --without-log --without-system --without-filesystem --without-chrono --without-random --without-python -j $FLATPAK_BUILDER_N_JOBS"
             ],
             "sources" : [
@@ -80,7 +80,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://newcontinuum.dl.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
+                    "url" : "https://downloads.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
                     "sha256" : "5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8"
                 },
                 {
@@ -178,7 +178,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "http://pilotfiber.dl.sourceforge.net/project/libwpd/libwpd/libwpd-0.9.9/libwpd-0.9.9.tar.xz",
+                    "url" : "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.9.9/libwpd-0.9.9.tar.xz",
                     "sha256" : "b91df4ca0ef0f456be9531c9ee07cf6a5e50a16b52002abb99e8ebef13fac2b2"
                 }
             ]
@@ -193,7 +193,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://excellmedia.dl.sourceforge.net/project/libwpg/libwpg/libwpg-0.2.2/libwpg-0.2.2.tar.xz",
+                    "url" : "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.2.2/libwpg-0.2.2.tar.xz",
                     "sha256" : "b49bfd77b9447534dee0d43bbdc48b4dcb09339605be21c01726243d5069a6cd"
                 }
             ]
@@ -211,6 +211,10 @@
                     "type" : "archive",
                     "url" : "http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-0.9.9.tar.gz",
                     "sha256" : "6d51fe79b502a1e277bea275a574ae2db5b1b9d7daef703a8fa3635ae02a8bb0"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/psiconv-fixes.patch"
                 },
                 {
                     "type" : "shell",
@@ -275,8 +279,8 @@
             ]
         },
         {
-            "name" : "libwps",
-            "cleanup" : [
+            "name": "libwps",
+            "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
                 "/bin/wps*"
@@ -284,20 +288,27 @@
             "config-opts" : [
                 "--disable-werror"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://newcontinuum.dl.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
-                    "sha256" : "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
+                    "sha256": "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
                 }
             ]
         },
         {
             "name": "enchant",
+            "config-opts": [
+                "--with-hunspell",
+                "--with-myspell-dir=/usr/share/hunspell"
+            ],
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
                 "/bin/enchant"
+            ],
+            "post-install": [
+                "install -p -D -m 0644 COPYING.LIB -t ${FLATPAK_DEST}/share/licenses/enchant/"
             ],
             "sources": [
                 {
@@ -323,7 +334,7 @@
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 "branch": "master",
-                "commit": "bf3eff98ebfb6c6051be19bb6a22fd9144bc457c"
+                "commit": "15311a79d0ac7e8a531a90c89fec45aa152c4402"
               },
               {
                 "type" : "shell",

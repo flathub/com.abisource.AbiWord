@@ -337,6 +337,10 @@
                 "commit": "15311a79d0ac7e8a531a90c89fec45aa152c4402"
               },
               {
+                  "type": "patch",
+                  "path": "patches/abiword-appdata.patch"
+              },
+              {
                 "type" : "shell",
                 "commands" : [
                   "NOCONFIGURE=1 ./autogen.sh"

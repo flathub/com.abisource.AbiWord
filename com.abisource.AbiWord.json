@@ -336,6 +336,10 @@
                     "type": "archive",
                     "url": "https://www.abisource.com/downloads/abiword/3.0.5/source/abiword-3.0.5.tar.gz",
                     "sha256": "1257247e9970508d6d1456d3e330cd1909c4b42b25e0f0a1bc32526d6f3a21b4"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/abiword-crash-im.patch"
                 }
             ]
         }

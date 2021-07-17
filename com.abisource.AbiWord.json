@@ -331,6 +331,9 @@
             "config-opts": [
                 "--enable-plugins=auto"
             ],
+            "build-options": {
+                "cppflags": "-DFLATPAK_BUILD"
+            },
             "sources": [
                 {
                     "type": "archive",
@@ -340,6 +343,10 @@
                 {
                     "type": "patch",
                     "path": "patches/abiword-crash-im.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/abiword-13927-disable-plugin-install.patch"
                 }
             ]
         }

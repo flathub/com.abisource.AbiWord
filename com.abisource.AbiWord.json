@@ -1,7 +1,7 @@
 {
     "app-id" : "com.abisource.AbiWord",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "41",
     "sdk" : "org.gnome.Sdk",
     "command" : "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -65,8 +65,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.45.tar.xz",
-                    "sha256" : "5cbc2c0f1dc44d202fa0c6e3a51e9f17b0c2deb8711ba650432bfde3180b69fa"
+                    "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.47.tar.xz",
+                    "sha256" : "d188ebd3787b5375a8fd38ee6f761a2007de5e98fa0cf5623f271daa67ba774d"
                 }
             ]
         },
@@ -78,6 +78,9 @@
                 "/share/doc/libwmf",
                 "/bin/libwmf*",
                 "/bin/wmf*"
+            ],
+            "config-opts": [
+                "--with-freetype=/usr"
             ],
             "sources" : [
                 {
@@ -165,8 +168,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.44.tar.xz",
-                    "sha256" : "6d6042af92cd962604068dbced5925948af6c812c2138defc3153c204d65a7b9"
+                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.49.tar.xz",
+                    "sha256" : "5ffc18dbb385edfb85b6c6254b9e5b4cb3d2ffa3042b932cdbce8e37f4b307e9"
                 }
             ]
         },

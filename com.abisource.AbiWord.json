@@ -336,12 +336,8 @@
               {
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
-                "branch": "master",
-                "commit": "15311a79d0ac7e8a531a90c89fec45aa152c4402"
-              },
-              {
-                  "type": "patch",
-                  "path": "patches/abiword-appdata.patch"
+                /* "branch": "master", */
+                "commit": "085dc27efff062371eacdbc6e86d1684aad5c383"
               },
               {
                 "type" : "shell",

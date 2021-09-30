@@ -172,6 +172,24 @@
             ]
         },
         {
+            "name": "librevenge",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ],
+            "config-opts": [
+                "--disable-tests",
+                "--disable-werror"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.4/librevenge-0.0.4.tar.xz",
+                    "sha256" : "933f0729f04267cc354b9a02bc3e9afefa5512a3bdd0b45f159ee14a3e3347b2"
+                }
+            ]
+        },
+        {
             "name" : "libwpd",
             "cleanup" : [
                 "/include",
@@ -181,8 +199,12 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.9.9/libwpd-0.9.9.tar.xz",
-                    "sha256" : "b91df4ca0ef0f456be9531c9ee07cf6a5e50a16b52002abb99e8ebef13fac2b2"
+                    "url" : "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.10.3/libwpd-0.10.3.tar.xz",
+                    "sha256" : "2465b0b662fdc5d4e3bebcdc9a79027713fb629ca2bff04a3c9251fdec42dd09"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/libwpd-fix.patch"
                 }
             ]
         },
@@ -196,8 +218,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.2.2/libwpg-0.2.2.tar.xz",
-                    "sha256" : "b49bfd77b9447534dee0d43bbdc48b4dcb09339605be21c01726243d5069a6cd"
+                    "url" : "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.3.3/libwpg-0.3.3.tar.xz",
+                    "sha256" : "99b3f7f8832385748582ab8130fbb9e5607bd5179bebf9751ac1d51a53099d1c"
                 }
             ]
         },
@@ -294,8 +316,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.2.10/libwps-0.2.10.tar.xz",
-                    "sha256": "2d9771489d2474d483089174e50f57f35785d0a444d390b0dfc7eae1b42b4b12"
+                    "url": "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.4.12/libwps-0.4.12.tar.xz",
+                    "sha256": "e21afb52a06d03b774c5a8c72679687ab64891b91ce0c3bdf2d3e97231534edb"
                 }
             ]
         },

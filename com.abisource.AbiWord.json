@@ -82,9 +82,14 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
-                    "sha256" : "5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8"
+                    "type": "git",
+                    "url": "https://github.com/caolanm/libwmf.git",
+                    "tag": "v0.2.12",
+                    "commit": "5b7af9cf44c688770f174533dbe14c8953ec39cd"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/libwmf-autoheader.patch"
                 },
                 {
                     "type" : "shell",

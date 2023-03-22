@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "desktop-file-name-prefix": "(Beta) ",
@@ -129,6 +129,7 @@
         {
             "name" : "link-grammar",
             "cleanup" : [
+                "/include",
                 "/lib/pkgconfig",
                 "/bin/link-parser"
             ],
@@ -182,7 +183,8 @@
             ],
             "config-opts": [
                 "--disable-tests",
-                "--disable-werror"
+                "--disable-werror",
+                "--without-docs"
             ],
             "sources": [
                 {
@@ -197,6 +199,9 @@
             "build-options": {
                 "cxxflags": "-Wno-error=restrict"
             },
+            "config-opts": [
+                "--without-docs"
+            ],
             "cleanup" : [
                 "/include",
                 "/share/doc",
@@ -222,6 +227,9 @@
                 "/share/doc",
                 "/lib/pkgconfig",
                 "/bin/wpg*"
+            ],
+            "config-opts": [
+                "--without-docs"
             ],
             "sources" : [
                 {
@@ -279,10 +287,12 @@
                 "/include",
                 "/share/doc",
                 "/lib/pkgconfig",
+                "/bin/wks*",
                 "/bin/wps*"
             ],
             "config-opts" : [
-                "--disable-werror"
+                "--disable-werror",
+                "--without-docs"
             ],
             "sources": [
                 {
@@ -325,12 +335,19 @@
             "config-opts" : [
                 "--enable-plugins=auto"
             ],
+            "cleanup": [
+                "/include"
+            ],
             "sources" : [
               {
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 /* "branch": "master", */
                 "commit": "085dc27efff062371eacdbc6e86d1684aad5c383"
+              },
+              {
+                "type": "patch",
+                "path": "patches/abiword-gstrdup.patch"
               },
               {
                 "type" : "shell",

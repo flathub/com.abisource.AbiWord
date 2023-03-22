@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -132,6 +132,7 @@
         {
             "name" : "link-grammar",
             "cleanup" : [
+                "/include",
                 "/lib/pkgconfig",
                 "/bin/link-parser"
             ],
@@ -178,10 +179,32 @@
             ]
         },
         {
+            "name": "librevenge",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ],
+            "config-opts": [
+                "--disable-tests",
+                "--disable-werror",
+                "--without-docs"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.4/librevenge-0.0.4.tar.xz",
+                    "sha256" : "933f0729f04267cc354b9a02bc3e9afefa5512a3bdd0b45f159ee14a3e3347b2"
+                }
+            ]
+        },
+        {
             "name" : "libwpd",
             "build-options": {
                 "cxxflags": "-Wno-error=restrict"
             },
+            "config-opts": [
+                "--without-docs"
+            ],
             "cleanup" : [
                 "/include",
                 "/share/doc",
@@ -203,6 +226,9 @@
                 "/share/doc",
                 "/lib/pkgconfig",
                 "/bin/wpg*"
+            ],
+            "config-opts": [
+                "--without-docs"
             ],
             "sources" : [
                 {
@@ -260,10 +286,12 @@
                 "/include",
                 "/share/doc",
                 "/lib/pkgconfig",
+                "/bin/wks*",
                 "/bin/wps*"
             ],
             "config-opts" : [
-                "--disable-werror"
+                "--disable-werror",
+                "--without-docs"
             ],
             "sources": [
                 {
@@ -309,6 +337,9 @@
             "build-options": {
                 "cppflags": "-DFLATPAK_BUILD"
             },
+            "cleanup": [
+                "/include"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -317,11 +348,11 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/abiword-crash-im.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/abiword-13927-disable-plugin-install.patch"
+                    "paths": [
+                        "patches/abiword-crash-im.patch",
+                        "patches/abiword-13927-disable-plugin-install.patch",
+                        "patches/abiword-gstrdup.patch"
+                    ]
                 }
             ]
         }

@@ -85,12 +85,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/caolanm/libwmf.git",
-                    "tag": "v0.2.12",
-                    "commit": "5b7af9cf44c688770f174533dbe14c8953ec39cd"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/libwmf-autoheader.patch"
+                    "tag": "v0.2.13",
+                    "commit": "9e4737f2293c0d127bda92e5b01896df10571424"
                 },
                 {
                     "type" : "shell",

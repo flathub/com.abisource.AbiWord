@@ -65,7 +65,15 @@
                 {
                     "type" : "archive",
                     "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.49.tar.xz",
-                    "sha256" : "e9ebe36688f010c9e6e40c8903f3732948deb8aca032578d07d0751bd82cf857"
+                    "sha256" : "e9ebe36688f010c9e6e40c8903f3732948deb8aca032578d07d0751bd82cf857",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libgsf",
+                        "versions": {
+                            "<": "1.15"
+                        },
+                        "stable-only": true
+                    }
                 }
             ]
         },
@@ -155,7 +163,15 @@
                 {
                     "type" : "archive",
                     "url" : "https://download.gnome.org/sources/lasem/0.5/lasem-0.5.1.tar.xz",
-                    "sha256" : "51f019984bc94b8a0dec70bb7af2950345759304584a5cc3d990d9ff2c66b443"
+                    "sha256" : "51f019984bc94b8a0dec70bb7af2950345759304584a5cc3d990d9ff2c66b443",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "lasem",
+                        "versions": {
+                            "<": "0.6"
+                        },
+                        "stable-only": false
+                    }
                 }
             ]
         },
@@ -170,7 +186,15 @@
                 {
                     "type" : "archive",
                     "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.52.tar.xz",
-                    "sha256" : "60b9efd94370f0969b394f0aac8c6eb91e15ebc0ce1236b44aa735eb1c98840c"
+                    "sha256" : "60b9efd94370f0969b394f0aac8c6eb91e15ebc0ce1236b44aa735eb1c98840c",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "goffice",
+                        "versions": {
+                            "<": "0.11"
+                        },
+                        "stable-only": true
+                    }
                 }
             ]
         },

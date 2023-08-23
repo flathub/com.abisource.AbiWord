@@ -196,6 +196,12 @@
                         },
                         "stable-only": true
                     }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoreconf -vfi"
+                    ]
                 }
             ]
         },

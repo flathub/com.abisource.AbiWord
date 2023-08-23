@@ -4,14 +4,14 @@
     "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
+    "branch": "gtk2",
     "rename-desktop-file": "abiword.desktop",
     "rename-appdata-file": "abiword.appdata.xml",
     "rename-icon": "abiword",
     "copy-icon": true,
     "finish-args": [
         "--share=ipc",
-        "--socket=fallback-x11",
-        "--socket=wayland",
+        "--socket=x11",
         "--filesystem=home",
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
@@ -31,6 +31,7 @@
     ],
     "modules": [
         "shared-modules/intltool/intltool-0.51.json",
+	"shared-modules/gtk2/gtk2.json",
         {
             "name": "boost",
             "buildsystem": "simple",
@@ -185,13 +186,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.55.tar.xz",
-                    "sha256": "16a221191855a6a6c0d06b1ef8e481cf3f52041a654ec96d35817045ba1a99af",
+                    "url": "https://download.gnome.org/sources/goffice/0.8/goffice-0.8.17.tar.xz",
+                    "sha256": "165070beb67b84580afe80a8a100b674a81d553ab791acd72ac0c655f4fadb15",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "goffice",
                         "versions": {
-                            "<": "0.11"
+                            "<": "0.9"
                         },
                         "stable-only": true
                     }
@@ -352,6 +353,7 @@
         {
             "name": "abiword",
             "config-opts": [
+                "--with-gtk2",
                 "--enable-plugins=auto"
             ],
             "build-options": {

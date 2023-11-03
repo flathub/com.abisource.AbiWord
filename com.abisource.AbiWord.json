@@ -64,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.50.tar.xz",
-                    "sha256": "6e6c20d0778339069d583c0d63759d297e817ea10d0d897ebbe965f16e2e8e52",
+                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.51.tar.xz",
+                    "sha256": "f0b83251f98b0fd5592b11895910cc0e19f798110b389aba7da1cb7c474017f5",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libgsf",
@@ -185,8 +185,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.55.tar.xz",
-                    "sha256": "16a221191855a6a6c0d06b1ef8e481cf3f52041a654ec96d35817045ba1a99af",
+                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz",
+                    "sha256": "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "goffice",

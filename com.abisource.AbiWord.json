@@ -60,9 +60,17 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.49.tar.xz",
-                    "sha256" : "e9ebe36688f010c9e6e40c8903f3732948deb8aca032578d07d0751bd82cf857"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.51.tar.xz",
+                    "sha256": "f0b83251f98b0fd5592b11895910cc0e19f798110b389aba7da1cb7c474017f5",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libgsf",
+                        "versions": {
+                            "<": "1.15"
+                        },
+                        "stable-only": true
+                    }
                 }
             ]
         },
@@ -169,9 +177,17 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.52.tar.xz",
-                    "sha256" : "60b9efd94370f0969b394f0aac8c6eb91e15ebc0ce1236b44aa735eb1c98840c"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz",
+                    "sha256": "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "goffice",
+                        "versions": {
+                            "<": "0.11"
+                        },
+                        "stable-only": true
+                    }
                 }
             ]
         },

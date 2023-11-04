@@ -1,0 +1,36 @@
+diff --git a/abiword.appdata.xml b/abiword.appdata.xml
+index 584380666..df348a043 100644
+--- a/abiword.appdata.xml
++++ b/abiword.appdata.xml
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2019 Hubert Figuière -->
+-<application>
+-  <id type="desktop">com.abisource.AbiWord</id>
++<component type="desktop-application">
++  <id>com.abisource.AbiWord</id>
+   <translation type="gettext">abiword</translation>
+   <name>AbiWord</name>
+   <summary>A word processor</summary>
+@@ -19,11 +19,14 @@
+     </p>
+     <!-- FIXME: Probably needs another paragraph -->
+   </description>
++  <launchable type="desktop-id">com.abisource.AbiWord.desktop</launchable>
+   <url type="homepage">https://www.abisource.com/</url>
+   <screenshots>
+-    <screenshot type="source">https://www.abisource.com/screenshots/AbiWord-screenshot-302.png</screenshot>
++    <screenshot type="default">
++      <image>https://gitlab.gnome.org/World/AbiWord/-/raw/9cb12d0442a399c4ae1a5f334225d7d2eb0f9280/docs/AbiWord-screenshot-302.png</image>
++    </screenshot>
+   </screenshots>
+   <releases>
+     <release version="3.0.5" type="stable" date="2021-07-03" />
+     <release version="3.0.4" type="stable" date="2019-11-27">
+       <url>https://www.abisource.com/changelogs/3.0.4.phtml</url>
+@@ -60,4 +64,4 @@
+   </releases>
+   <content_rating type="oars-1.0" />
+   <update_contact>hub@figuiere.net</update_contact>
+-</application>
++</component>

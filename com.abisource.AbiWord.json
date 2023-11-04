@@ -371,7 +371,8 @@
                     "paths": [
                         "patches/abiword-crash-im.patch",
                         "patches/abiword-13927-disable-plugin-install.patch",
-                        "patches/abiword-gstrdup.patch"
+                        "patches/abiword-gstrdup.patch",
+                        "patches/abiword-appstream.patch"
                     ]
                 }
             ]

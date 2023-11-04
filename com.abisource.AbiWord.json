@@ -359,7 +359,7 @@
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 "//": "master branch",
-                "commit": "25f9bab73242207586f018dde0747caac646c384"
+                "commit": "426ff13bb25cdf63922751d8dacb48db49cfb73b"
               },
               {
                 "type" : "shell",

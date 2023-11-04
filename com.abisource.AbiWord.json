@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "rename-desktop-file": "abiword.desktop",

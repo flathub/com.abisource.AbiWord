@@ -12,11 +12,12 @@ index 584380666..df348a043 100644
    <translation type="gettext">abiword</translation>
    <name>AbiWord</name>
    <summary>A word processor</summary>
-@@ -19,11 +19,14 @@
+@@ -19,11 +19,15 @@
      </p>
      <!-- FIXME: Probably needs another paragraph -->
    </description>
 +  <launchable type="desktop-id">com.abisource.AbiWord.desktop</launchable>
++  <developer_name>AbiWord contributors</developer_name>
    <url type="homepage">https://www.abisource.com/</url>
    <screenshots>
 -    <screenshot type="source">https://www.abisource.com/screenshots/AbiWord-screenshot-302.png</screenshot>

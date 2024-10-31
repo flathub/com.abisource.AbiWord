@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -46,8 +46,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2",
-                    "sha256": "686affff989ac2488f79a97b9479efb9f2abae035b5ed4d8226de6857933fd3b"
+                    "url": "https://downloads.sourceforge.net/project/boost/boost/1.80.0/boost_1_80_0.tar.bz2",
+                    "sha256": "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
                 }
             ]
         },
@@ -115,9 +115,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.abisource.com/downloads/wv/1.2.9/wv-1.2.9.tar.gz",
-                    "sha256": "4c730d3b325c0785450dd3a043eeb53e1518598c4f41f155558385dd2635c19d"
+                    "type": "git",
+                    "url": "https://github.com/AbiWord/wv.git",
+                    "tag": "wv-1-2-9",
+                    "commit": "30692affae5ee38f4804e1621e10e1f4f58d3fd3"
                 },
                 {
                     "type": "shell",
@@ -142,9 +143,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.abisource.com/downloads/link-grammar/5.3.11/link-grammar-5.3.11.tar.gz",
-                    "sha256": "73ca3ae82ec7ddbfce827eb7017a2953afea2cea854b4d7517139881e1170cd7"
+                    "type": "git",
+                    "url": "https://github.com/AbiWord/link-grammar.git",
+                    "tag": "link-grammar-5.3.11",
+                    "commit": "48fd63ebfeb570b418e1068ed434c8b17bf743f2"
                 }
             ]
         },
@@ -327,6 +329,9 @@
                 "--with-hunspell",
                 "--with-myspell-dir=/usr/share/hunspell"
             ],
+            "build-options": {
+                "cflags": "-fpermissive"
+            },
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
@@ -337,9 +342,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz",
-                    "sha256": "2fac9e7be7e9424b2c5570d8affe568db39f7572c10ed48d4e13cddf03f7097f"
+                    "type": "git",
+                    "url": "https://github.com/AbiWord/enchant.git",
+                    "//": "tags/enchant-1-6-0",
+                    "commit": "02f3b4a85560b93d9a0aa593ef70e5496d0f029c"
                 },
                 {
                     "type": "shell",
@@ -362,9 +368,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://www.abisource.com/downloads/abiword/3.0.5/source/abiword-3.0.5.tar.gz",
-                    "sha256": "1257247e9970508d6d1456d3e330cd1909c4b42b25e0f0a1bc32526d6f3a21b4"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/World/AbiWord.git",
+                    "tag": "release-3.0.5",
+                    "commit": "8e17ef36b5110fc669e868ccacdd821bdc47dad1"
                 },
                 {
                     "type": "patch",
@@ -372,7 +379,9 @@
                         "patches/abiword-crash-im.patch",
                         "patches/abiword-13927-disable-plugin-install.patch",
                         "patches/abiword-gstrdup.patch",
-                        "patches/abiword-appstream.patch"
+                        "patches/abiword-appstream.patch",
+                        "patches/0001-Fix-build-with-libxml2-2.12.patch",
+                        "patches/0002-fix-itex2mml.patch"
                     ]
                 }
             ]

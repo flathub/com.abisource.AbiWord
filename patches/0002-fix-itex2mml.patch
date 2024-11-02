@@ -1,0 +1,12 @@
+diff --git a/plugins/mathview/itex2mml/itex2MML.h b/plugins/mathview/itex2mml/itex2MML.h
+index 276e1a305..fbdfd6a7e 100644
+--- a/plugins/mathview/itex2mml/itex2MML.h
++++ b/plugins/mathview/itex2mml/itex2MML.h
+@@ -24,6 +24,7 @@ extern "C" {
+    */
+   extern int    itex2MML_filter (const char * buffer, unsigned long length);
+ 
++  extern int    itex2MML_do_html_filter (const char * buffer, unsigned long length, const int forbid_markup);
+   extern int    itex2MML_html_filter (const char * buffer, unsigned long length);
+   extern int    itex2MML_strict_html_filter (const char * buffer, unsigned long length);
+ 

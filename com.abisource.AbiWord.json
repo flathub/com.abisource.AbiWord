@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -370,19 +370,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/World/AbiWord.git",
-                    "tag": "release-3.0.5",
-                    "commit": "8e17ef36b5110fc669e868ccacdd821bdc47dad1"
-                },
-                {
-                    "type": "patch",
-                    "paths": [
-                        "patches/abiword-crash-im.patch",
-                        "patches/abiword-13927-disable-plugin-install.patch",
-                        "patches/abiword-gstrdup.patch",
-                        "patches/abiword-appstream.patch",
-                        "patches/0001-Fix-build-with-libxml2-2.12.patch",
-                        "patches/0002-fix-itex2mml.patch"
-                    ]
+                    "tag": "release-3.0.6",
+                    "commit": "7629a35fed6f3766afe5e7aaf430c184e0a903e6"
                 }
             ]
         }

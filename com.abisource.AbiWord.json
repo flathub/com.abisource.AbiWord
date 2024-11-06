@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "desktop-file-name-prefix": "(Beta) ",
@@ -365,7 +365,7 @@
                 "type" : "git",
                 "url" : "https://gitlab.gnome.org/World/AbiWord.git",
                 "//": "master branch",
-                "commit": "9382ba575f401e703cd34e626c3ef3bc0967bf9b"
+                "commit": "542cb5c8aa0a97efd033f78d29f706d1fbae74e7"
               },
               {
                 "type" : "shell",

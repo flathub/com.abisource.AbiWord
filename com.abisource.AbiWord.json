@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "rename-desktop-file": "abiword.desktop",
@@ -370,8 +370,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/World/AbiWord.git",
-                    "tag": "release-3.0.6",
-                    "commit": "7629a35fed6f3766afe5e7aaf430c184e0a903e6"
+                    "tag": "release-3.0.7",
+                    "commit": "3114dd2d8b0e96323000af09e86eaf39caa3040f"
                 }
             ]
         }

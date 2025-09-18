@@ -1,5 +1,20 @@
---- ./program/psiconv/psiconv.c-old	2020-09-18 21:17:20.026326840 -0400
-+++ ./program/psiconv/psiconv.c	2020-09-18 21:18:23.944022095 -0400
+diff --git a/compat/getopt.h b/compat/getopt.h
+index b0147e9..96b1246 100644
+--- a/compat/getopt.h
++++ b/compat/getopt.h
+@@ -133,7 +133,7 @@ struct option
+    errors, only prototype getopt for the GNU C library.  */
+ extern int getopt (int __argc, char *const *__argv, const char *__shortopts);
+ # else /* not __GNU_LIBRARY__ */
+-extern int getopt ();
++extern int getopt (int __argc, char *const *__argv, const char *__shortopts);
+ # endif /* __GNU_LIBRARY__ */
+ 
+ # ifndef __need_getopt
+diff --git a/program/psiconv/psiconv.c b/program/psiconv/psiconv.c
+index b73b901..de26cb9 100644
+--- a/program/psiconv/psiconv.c
++++ b/program/psiconv/psiconv.c
 @@ -44,6 +44,8 @@
  #include "psiconv.h"
  #include "gen.h"
@@ -9,9 +24,11 @@
  static void print_help(void);
  static void print_version(void);
  static void strtoupper(char *str);
---- ./program/psiconv/psiconv.h-old	2020-09-18 21:17:11.887238307 -0400
-+++ ./program/psiconv/psiconv.h	2020-09-18 21:17:54.612703049 -0400
-@@ -52,7 +52,7 @@
+diff --git a/program/psiconv/psiconv.h b/program/psiconv/psiconv.h
+index 1ec0a7e..68b7dc7 100644
+--- a/program/psiconv/psiconv.h
++++ b/program/psiconv/psiconv.h
+@@ -52,7 +52,7 @@ typedef struct fileformat_s {
    output_function *output;
  } *fileformat;
  

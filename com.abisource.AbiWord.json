@@ -61,8 +61,8 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.51.tar.xz",
-                    "sha256": "f0b83251f98b0fd5592b11895910cc0e19f798110b389aba7da1cb7c474017f5",
+                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.54.tar.xz",
+                    "sha256": "d18869264a2513cfb071712486d115dada064ff8a040265b49936bca06f17623",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libgsf",

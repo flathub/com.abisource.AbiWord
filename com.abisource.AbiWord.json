@@ -1,7 +1,7 @@
 {
     "app-id": "com.abisource.AbiWord",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "abiword",
     "desktop-file-name-prefix": "(Beta) ",
@@ -15,24 +15,26 @@
         "--filesystem=xdg-run/gvfs",
         "--filesystem=xdg-run/gvfsd"
     ],
-    "build-options" : {
-        "env" : {
-            "V" : "0"
+    "build-options": {
+        "env": {
+            "V": "0"
         }
     },
-    "cleanup" : [
+    "cleanup": [
+        "/include",
+	"/lib/cmake",
         "/lib/pkgconfig",
+        "/share/gtk-doc",
         "/share/man",
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         "shared-modules/intltool/intltool-0.51.json",
         {
-            "name" : "boost",
-            "buildsystem" : "simple",
-            "cleanup" : [
-                "/include",
+            "name": "boost",
+            "buildsystem": "simple",
+            "cleanup": [
                 "/lib/libboost_*.so*",
                 "/lib/libboost_*.a"
             ],
@@ -40,7 +42,7 @@
               "./bootstrap.sh --with-libraries=atomic",
               "./b2 install variant=release link=shared runtime-link=shared --prefix=/app --without-math --without-thread --without-container --without-log --without-system --without-filesystem --without-chrono --without-random --without-python -j $FLATPAK_BUILDER_N_JOBS"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "archive",
                     "url": "https://downloads.sourceforge.net/project/boost/boost/1.80.0/boost_1_80_0.tar.bz2",
@@ -49,20 +51,16 @@
             ]
         },
         {
-            "name" : "gsf",
-            "cleanup" : [
-                "/include",
-                "/lib/pkgconfig",
-                "/share/man",
-                "/share/gtk-doc/html/gsf",
+            "name": "gsf",
+            "cleanup": [
                 "/share/thumbnailers",
-                "/bin/gsf*"
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.55.tar.xz",
-                    "sha256": "74d60abba15bd3ea5ad17da5b924d8e36f649a25c3dc77adbabd2a3628a02131",
+                    "url": "https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.58.tar.xz",
+                    "sha256": "06e07ea12b7a52b9e316faddfecb640b1717a4875c59f0efb3b0cec1e2ccf35a",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libgsf",
@@ -75,46 +73,37 @@
             ]
         },
         {
-            "name" : "libwmf",
-            "cleanup" : [
-                "/include",
+            "name": "libwmf",
+            "cleanup": [
                 "/lib/gtk-2.0",
-                "/share/doc/libwmf",
-                "/bin/libwmf*",
-                "/bin/wmf*"
+                "/share/doc",
+                "/bin"
             ],
             "config-opts": [
                 "--with-freetype=/usr"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/caolanm/libwmf.git",
-                    "tag": "v0.2.12",
-                    "commit": "5b7af9cf44c688770f174533dbe14c8953ec39cd"
+                    "tag": "v0.2.13",
+                    "commit": "9e4737f2293c0d127bda92e5b01896df10571424"
                 },
                 {
-                    "type": "patch",
-                    "path": "patches/libwmf-autoheader.patch"
-                },
-                {
-                    "type" : "shell",
-                    "commands" : [
+                    "type": "shell",
+                    "commands": [
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name" : "wv",
-            "cleanup" : [
-                "/include",
-                "/share/man",
+            "name": "wv",
+            "cleanup": [
                 "/share/wv",
-                "/lib/pkgconfig",
-                "/bin/wv*"
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/AbiWord/wv.git",
@@ -122,27 +111,20 @@
                     "commit": "30692affae5ee38f4804e1621e10e1f4f58d3fd3"
                 },
                 {
-                    "type" : "shell",
-                    "commands" : [
-                        "touch AUTHORS ChangeLog"
-                    ]
-                },
-                {
-                    "type" : "shell",
-                    "commands" : [
+                    "type": "shell",
+                    "commands": [
+                        "touch AUTHORS ChangeLog",
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name" : "link-grammar",
-            "cleanup" : [
-                "/include",
-                "/lib/pkgconfig",
-                "/bin/link-parser"
+            "name": "link-grammar",
+            "cleanup": [
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/AbiWord/link-grammar.git",
@@ -152,36 +134,27 @@
             ]
         },
         {
-            "name" : "lasem",
-            "cleanup" : [
-                "/include",
-                "/lib/pkgconfig",
+            "name": "lasem",
+            "cleanup": [
                 "/doc",
                 "/share/gir-1.0",
-                "/share/gtk-doc",
-                "/share/man",
-                "/bin/lasem*"
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/lasem/0.5/lasem-0.5.1.tar.xz",
-                    "sha256" : "51f019984bc94b8a0dec70bb7af2950345759304584a5cc3d990d9ff2c66b443"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/lasem/0.5/lasem-0.5.1.tar.xz",
+                    "sha256": "51f019984bc94b8a0dec70bb7af2950345759304584a5cc3d990d9ff2c66b443"
                 }
             ]
         },
         {
-            "name" : "goffice",
-            "cleanup" : [
-                "/include",
-                "/share/gtk-doc",
-                "/lib/pkgconfig"
-            ],
-            "sources" : [
+            "name": "goffice",
+            "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz",
-                    "sha256": "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2",
+                    "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.61.tar.xz",
+                    "sha256": "558597fd9ca59b93ff562750218d1e7ea8ec3c8d0ed6a5cc096aa715ef909a15",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "goffice",
@@ -195,10 +168,6 @@
         },
         {
             "name": "librevenge",
-            "cleanup": [
-                "/include",
-                "/lib/pkgconfig"
-            ],
             "config-opts": [
                 "--disable-tests",
                 "--disable-werror",
@@ -208,107 +177,89 @@
                 {
                     "type": "archive",
                     "url": "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.4/librevenge-0.0.4.tar.xz",
-                    "sha256" : "933f0729f04267cc354b9a02bc3e9afefa5512a3bdd0b45f159ee14a3e3347b2"
+                    "sha256": "933f0729f04267cc354b9a02bc3e9afefa5512a3bdd0b45f159ee14a3e3347b2"
                 }
             ]
         },
         {
-            "name" : "libwpd",
+            "name": "libwpd",
             "build-options": {
                 "cxxflags": "-Wno-error=restrict"
             },
             "config-opts": [
                 "--without-docs"
             ],
-            "cleanup" : [
-                "/include",
-                "/share/doc",
-                "/lib/pkgconfig",
-                "/bin/wpd*"
+            "cleanup": [
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.10.3/libwpd-0.10.3.tar.xz",
-                    "sha256" : "2465b0b662fdc5d4e3bebcdc9a79027713fb629ca2bff04a3c9251fdec42dd09"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/libwpd-fix.patch"
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwpd/libwpd/libwpd-0.10.3/libwpd-0.10.3.tar.xz",
+                    "sha256": "2465b0b662fdc5d4e3bebcdc9a79027713fb629ca2bff04a3c9251fdec42dd09"
                 }
             ]
         },
         {
-            "name" : "libwpg",
-            "cleanup" : [
-                "/include",
-                "/share/doc",
-                "/lib/pkgconfig",
-                "/bin/wpg*"
+            "name": "libwpg",
+            "cleanup": [
+                "/bin"
             ],
             "config-opts": [
                 "--without-docs"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.3.3/libwpg-0.3.3.tar.xz",
-                    "sha256" : "99b3f7f8832385748582ab8130fbb9e5607bd5179bebf9751ac1d51a53099d1c"
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/libwpg/libwpg/libwpg-0.3.3/libwpg-0.3.3.tar.xz",
+                    "sha256": "99b3f7f8832385748582ab8130fbb9e5607bd5179bebf9751ac1d51a53099d1c"
                 }
             ]
         },
         {
-            "name" : "psiconv",
-            "cleanup" : [
-                "/include",
-                "/share/man",
+            "name": "psiconv",
+            "cleanup": [
                 "/share/psiconv",
-                "/bin/psiconv*"
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-0.9.9.tar.gz",
-                    "sha256" : "6d51fe79b502a1e277bea275a574ae2db5b1b9d7daef703a8fa3635ae02a8bb0"
+                    "type": "archive",
+                    "url": "http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-0.9.9.tar.gz",
+                    "sha256": "6d51fe79b502a1e277bea275a574ae2db5b1b9d7daef703a8fa3635ae02a8bb0"
                 },
                 {
                     "type": "patch",
                     "path": "patches/psiconv-fixes.patch"
                 },
                 {
-                    "type" : "shell",
-                    "commands" : [
+                    "type": "shell",
+                    "commands": [
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name" : "gtkmathview",
-            "cleanup" : [
-                "/include",
-                "/lib/pkgconfig",
-                "/share/man",
-                "/bin/mathml*"
+            "name": "gtkmathview",
+            "cleanup": [
+                "/bin"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/AbiWord/gtkmathview/releases/download/0.8.1/gtkmathview-0.8.1.tar.xz",
-                    "sha256" : "2ab60a33ef1cd76591e70770799e6bc0b2600c5366933a7c1978a33a54faae44"
+                    "type": "archive",
+                    "url": "https://github.com/AbiWord/gtkmathview/releases/download/0.8.1/gtkmathview-0.8.1.tar.xz",
+                    "sha256": "2ab60a33ef1cd76591e70770799e6bc0b2600c5366933a7c1978a33a54faae44"
                 }
             ]
         },
         {
             "name": "libwps",
             "cleanup": [
-                "/include",
                 "/share/doc",
-                "/lib/pkgconfig",
-                "/bin/wks*",
-                "/bin/wps*"
+                "/bin"
             ],
-            "config-opts" : [
+            "config-opts": [
                 "--disable-werror",
                 "--without-docs"
             ],
@@ -330,12 +281,7 @@
                 "cflags": "-fpermissive"
             },
             "cleanup": [
-                "/include",
-                "/lib/pkgconfig",
-                "/bin/enchant"
-            ],
-            "post-install": [
-                "install -p -D -m 0644 COPYING.LIB -t ${FLATPAK_DEST}/share/licenses/enchant/"
+                "/bin"
             ],
             "sources": [
                 {
@@ -345,33 +291,25 @@
                     "commit": "02f3b4a85560b93d9a0aa593ef70e5496d0f029c"
                 },
                 {
-                    "type" : "shell",
-                    "commands" : [
+                    "type": "shell",
+                    "commands": [
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name" : "abiword",
-            "config-opts" : [
+            "name": "abiword",
+            "config-opts": [
                 "--enable-plugins=auto"
             ],
-            "cleanup": [
-                "/include"
-            ],
-            "sources" : [
+            "sources": [
               {
-                "type" : "git",
-                "url" : "https://gitlab.gnome.org/World/AbiWord.git",
+                "type": "git",
+                "url": "https://gitlab.gnome.org/World/AbiWord.git",
+                "disable-lfs": true,
                 "//": "master branch",
-                "commit": "f9794331a94f0837214a2e85a07ef8ddf5339f38"
-              },
-              {
-                "type" : "shell",
-                "commands" : [
-                  "NOCONFIGURE=1 ./autogen.sh"
-                ]
+                "commit": "972381bf2ad153fec7e883009a43ba64a6bdc6ad"
               }
             ]
         }

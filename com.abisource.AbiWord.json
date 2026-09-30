@@ -1,8 +1,8 @@
 {
     "app-id": "com.abisource.AbiWord",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "50",
-    "sdk": "org.gnome.Sdk",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "26.08",
+    "sdk": "org.freedesktop.Sdk",
     "command": "abiword",
     "desktop-file-name-prefix": "(Beta) ",
     "finish-args": [

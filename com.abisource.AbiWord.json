@@ -86,8 +86,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/caolanm/libwmf.git",
-                    "tag": "v0.2.13",
-                    "commit": "9e4737f2293c0d127bda92e5b01896df10571424"
+                    "tag": "v0.2.16",
+                    "commit": "a916f30f6232cf3e28df285fcba5753ee5b1aa0f"
                 },
                 {
                     "type": "shell",

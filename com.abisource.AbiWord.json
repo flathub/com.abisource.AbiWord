@@ -34,13 +34,9 @@
         {
             "name": "boost",
             "buildsystem": "simple",
-            "cleanup": [
-                "/lib/libboost_*.so*",
-                "/lib/libboost_*.a"
-            ],
             "build-commands": [
-                "./bootstrap.sh --with-libraries=atomic",
-                "./b2 install variant=release link=shared runtime-link=shared --prefix=/app --without-math --without-thread --without-container --without-log --without-system --without-filesystem --without-chrono --without-random --without-python -j $FLATPAK_BUILDER_N_JOBS"
+                "install -d ${FLATPAK_DEST}/include",
+                "cp -rf boost ${FLATPAK_DEST}/include"
             ],
             "sources": [
                 {
